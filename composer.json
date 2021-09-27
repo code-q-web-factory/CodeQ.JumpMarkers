@@ -4,6 +4,7 @@
     "type": "neos-package",
     "license": "GPL-3.0-or-later",
     "require": {
+        "ext-json": "*",
         "neos/neos": "^4.3 || ^5.0 || ^7.0 || dev-master"
     },
     "autoload": {

@@ -1110,16 +1110,21 @@ var AnchorView = (_dec = (0, _reactRedux.connect)(function (state) {
 			var documentNodeIdentifier = (0, _plowJs.$get)('identifier', _this.props.documentNode);
 			var link = 'node://' + documentNodeIdentifier + '#' + _this.getSectionId();
 			_this.copyToClipboard(link);
-			_this.setState({ copyNeosLinkState: 'copied' });
+			_this.setState({ copyNeosLinkState: 'copied', copyUriState: 'default' });
 		}, _this.copyUriToClipboard = function () {
 			_this.setState({ copyUriState: 'loading' });
-			var redirectUri = (0, _plowJs.$get)('uri', _this.props.documentNode).replace('neos/preview', 'neos/redirect');
-			console.info(redirectUri);
+			var redirectUri = (0, _plowJs.$get)('uri', _this.props.documentNode).replace('neos/preview', 'neos/jump-markers-node-to-uri').replace('neos/redirect', 'neos/jump-markers-node-to-uri');
 			fetch(redirectUri).then(function (response) {
-				_this.copyToClipboard(response.url + '#' + _this.getSectionId());
-				console.info(response);
-				console.info(response.url + '#' + _this.getSectionId());
-				_this.setState({ copyUriState: 'copied' });
+				return response.json();
+			}).then(function (response) {
+				if (!response.success) {
+					// ok, I'm very lazy here
+					alert(response.message);
+					_this.setState({ copyNeosLinkState: 'default', copyUriState: 'default' });
+				} else {
+					_this.copyToClipboard(response.uri + '#' + _this.getSectionId());
+					_this.setState({ copyNeosLinkState: 'default', copyUriState: 'copied' });
+				}
 			});
 		}, _this.copyToClipboard = function (link) {
 			var textArea = document.createElement('textarea');

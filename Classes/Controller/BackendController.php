@@ -2,6 +2,8 @@
 
 namespace CodeQ\JumpMarkers\Controller;
 
+use Neos\ContentRepository\Domain\Model\Workspace;
+use Neos\Eel\FlowQuery\FlowQuery;
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Mvc\Controller\ActionController;
 use Neos\ContentRepository\Domain\Model\NodeInterface;
@@ -46,6 +48,8 @@ class BackendController extends ActionController
     /**
      * Get an uri to a link that might now be live yet.
      *
+     * The API is very lazily build, mainly focusing on the best case.
+     *
      * @param NodeInterface|null $node
      * @return void
      * @throws NodeNotFoundException
@@ -55,18 +59,38 @@ class BackendController extends ActionController
      * @throws \Neos\Flow\Property\Exception
      * @throws \Neos\Flow\Security\Exception
      * @throws \Neos\Neos\Exception
+     * @throws \Neos\Eel\Exception
      * @Flow\IgnoreValidation("node")
      */
     public function nodeToUriAction(NodeInterface $node = null)
     {
-        exit('wanting to see this message');
         if ($node === null) {
-            throw new NodeNotFoundException('The requested node does not exist or isn\'t accessible to the current user', 1430218623);
+            exit(json_encode([
+                'success' => false,
+                'message' => 'The requested node does not exist or isn\'t accessible to the current user.'
+            ]));
         }
-        exit('part one');
 
-        print_r($this->linkingService->createNodeUri($this->controllerContext, $node, null, null, true));
-        //print_r($this->linkingService->resolveNodeUri($matches[0], $node, $controllerContext, $absolute);
-        exit();
+        $flowQuery = new FlowQuery([$node]);
+        $flowQuery->pushOperation('context', [['workspaceName' => 'live']]);
+        if($flowQuery->count() == 0) {
+            exit(json_encode([
+                'success' => false,
+                'message' => 'The requested pages does not exist or isn\'t published yet.'
+            ]));
+        }
+        $publicNode = $flowQuery->get(0);
+
+        if(!$publicNode->isVisible()) {
+            exit(json_encode([
+                'success' => false,
+                'message' => 'The requested page is not visible to public visitors.'
+            ]));
+        }
+
+        exit(json_encode([
+            'success' => true,
+            'uri' => $this->linkingService->createNodeUri($this->controllerContext, $publicNode, null, null, true)
+        ]));
     }
 }

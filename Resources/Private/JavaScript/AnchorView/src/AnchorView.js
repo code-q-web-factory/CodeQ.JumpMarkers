@@ -30,18 +30,23 @@ export default class AnchorView extends Component {
 		const documentNodeIdentifier = $get('identifier', this.props.documentNode);
 		const link = 'node://' + documentNodeIdentifier + '#' + this.getSectionId();
 		this.copyToClipboard(link);
-		this.setState({copyNeosLinkState: 'copied'});
+		this.setState({copyNeosLinkState: 'copied', copyUriState: 'default'});
 	};
 
 	copyUriToClipboard = () => {
 		this.setState({copyUriState: 'loading'});
-		const redirectUri = $get('uri', this.props.documentNode).replace('neos/preview', 'neos/jump-markers-node-to-uri');
-		console.info(redirectUri);
-		fetch(redirectUri).then(response => {
-			this.copyToClipboard(response.url + '#' + this.getSectionId());
-			console.info(response);
-			console.info(response.url + '#' + this.getSectionId());
-			this.setState({copyUriState: 'copied'});
+		const redirectUri = $get('uri', this.props.documentNode).replace('neos/preview', 'neos/jump-markers-node-to-uri').replace('neos/redirect', 'neos/jump-markers-node-to-uri');
+		fetch(redirectUri)
+			.then(response => response.json())
+			.then(response => {
+				if(!response.success) {
+					// ok, I'm very lazy here
+					alert(response.message);
+					this.setState({copyNeosLinkState: 'default', copyUriState: 'default'});
+				} else {
+					this.copyToClipboard(response.uri + '#' + this.getSectionId());
+					this.setState({copyNeosLinkState: 'default', copyUriState: 'copied'});
+				}
 		});
 	};
 
