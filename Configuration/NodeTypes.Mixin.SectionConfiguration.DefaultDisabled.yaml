@@ -1,0 +1,7 @@
+'CodeQ.JumpMarkers:Mixin.SectionConfiguration.DefaultDisabled':
+  abstract: true
+  superTypes:
+    'CodeQ.JumpMarkers:Mixin.SectionConfiguration': true
+  properties:
+    includeInHashMenu:
+      defaultValue: false

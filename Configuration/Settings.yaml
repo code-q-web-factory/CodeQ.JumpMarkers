@@ -1,0 +1,32 @@
+Neos:
+  Flow:
+    mvc:
+      routes:
+        'CodeQ.JumpMarkers':
+          position: 'start'
+    security:
+      authentication:
+        providers:
+          'Neos.Neos:Backend':
+            requestPatterns:
+              'CodeQ.JumpMarkers:Controllers':
+                pattern: 'ControllerObjectName'
+                patternOptions:
+                  controllerObjectNamePattern: 'CodeQ\JumpMarkers\Controller\.*'
+  Neos:
+    fusion:
+      autoInclude:
+        CodeQ.JumpMarkers: true
+    userInterface:
+      translation:
+        autoInclude:
+          CodeQ.JumpMarkers:
+            - Main
+            - 'NodeTypes/*'
+      requireJsPathMapping:
+        CodeQ.JumpMarkers/Views: 'resource://CodeQ.JumpMarkers/Public/JavaScript/Inspector/Views'
+    Ui:
+      resources:
+        javascript:
+          'CodeQ.JumpMarkers:AnchorView':
+            resource: resource://CodeQ.JumpMarkers/Public/JavaScript/AnchorView/Plugin.js

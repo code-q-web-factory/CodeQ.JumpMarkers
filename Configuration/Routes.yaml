@@ -1,0 +1,9 @@
+-
+  name: 'Node to absolute uri'
+  uriPattern: 'neos/jump-markers-node-to-uri'
+  defaults:
+    '@package':    'CodeQ.JumpMarkers'
+    '@controller': 'Backend'
+    '@action':     'nodeToUri'
+    '@format':     'html'
+  appendExceedingArguments: true

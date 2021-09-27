@@ -1,0 +1,7 @@
+# Meant to be used as a processor. Prepends a tag with the sectionId
+prototype(CodeQ.JumpMarkers:AnchorWrapper) < prototype(Neos.Fusion:Value) {
+    anchor = Neos.Fusion:Tag {
+        attributes.id = CodeQ.JumpMarkers:Integration.Helper.NodeAnchorId
+    }
+    value = ${(q(node).property('sectionId') || q(node).property('includeInHashMenu')) ? this.anchor + value : value}
+}

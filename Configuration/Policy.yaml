@@ -1,0 +1,12 @@
+privilegeTargets:
+  'Neos\Flow\Security\Authorization\Privilege\Method\MethodPrivilege':
+    'CodeQ.JumpMarkers:NodeToUri':
+      label: Access to the backend for converting a node to an absolute uri
+      matcher: 'method(CodeQ\JumpMarkers\Controller\BackendController->nodeToUriAction())'
+
+roles:
+  'Neos.Neos:AbstractEditor':
+    privileges:
+      -
+        privilegeTarget: 'CodeQ.JumpMarkers:NodeToUri'
+        permission: GRANT
