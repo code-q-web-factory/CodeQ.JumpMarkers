@@ -49,7 +49,7 @@
           editorOptions:
             # Implements the most common subset of CodeQ.JumpMarkers:Integration.Helper.NodeAnchorId,
             # fully implementing Carbon.String.urlize(value) would bloat the code too much
-            placeholder: "ClientEval: (node.properties.id || node.properties.hashMenuTitle || node.properties.title || ('node-id-' + node.identifier)).replace('&nbsp;', '-').replace(/<[^>]*>/g, ' ').substr(0, 100).trim().toLowerCase().replaceAll('ä', 'ae').replaceAll('ü', 'ue').replaceAll('ö', 'oe').replaceAll('ß', 'ss').replace(/[^A-Za-z0-9\/]+/g, '-').trim().replace(/^.*?([a-z].*)$/, /*remove non-alpha chars from start*/ '$1').replace(/(.*)-$/, /*remove dashes from end*/ '$1')"
+            placeholder: "ClientEval:node.properties.includeInHashMenu ? (node.properties.id || node.properties.hashMenuTitle || node.properties.title || ('node-id-' + node.identifier)).replace('&nbsp;', '-').replace(/<[^>]*>/g, ' ').substr(0, 100).trim().toLowerCase().replaceAll('ä', 'ae').replaceAll('ü', 'ue').replaceAll('ö', 'oe').replaceAll('ß', 'ss').replace(/[^A-Za-z0-9\/]+/g, '-').trim().replace(/^.*?([a-z].*)$/, /*remove non-alpha chars from start*/ '$1').replace(/(.*)-$/, /*remove dashes from end*/ '$1') : ''"
         help:
           message: i18n
       validation:
