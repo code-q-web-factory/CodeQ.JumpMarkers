@@ -1,12 +1,12 @@
-prototype(CodeQ.JumpMarkers:Integration.Helper.NodeAnchorId) < prototype(Neos.Fusion:Component) {
+prototype(CodeQ.JumpMarkers:NodeAnchorId) < prototype(Neos.Fusion:Component) {
     # api
     node = ${node}
 
     renderer = Neos.Fusion:Value {
         sectionId = ${q(props.node).property('sectionId')}
 
-        fallback = ${q(props.node).property('id') || q(props.node).property('id') || q(props.node).property('hashMenuTitle') || q(props.node).property('title') || ('node-id-' + props.node.identifier)}
-        fallback.@process.removeHtml = ${String.stripTags(String.pregReplace(String.replace(value, '&nbsp;', '-'), '/<[^>]*>/', ' '))}
+        fallback = ${q(props.node).property('jumpMarkerTitle')}
+        fallback.@process.removeHtml = ${String.stripTags(String.pregReplace(String.replace(value, '&nbsp;', '-'), '/<[^>]*>/', '-'))}
         fallback.@process.shorten = ${String.trim(String.toLowerCase(String.crop(value, 100)))}
         fallback.@process.urlize = ${Carbon.String.urlize(value)}
         fallback.@process.mustStartWithAChar = ${String.pregReplace(value, '/^.*?([a-z].*)$/', '$1')}

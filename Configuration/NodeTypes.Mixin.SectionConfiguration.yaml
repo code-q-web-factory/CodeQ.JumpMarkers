@@ -13,18 +13,7 @@
           group: jumpmarker
           view: 'CodeQ.JumpMarkers/Views/AnchorView'
   properties:
-    includeInHashMenu:
-      type: boolean
-      defaultValue: false
-      ui:
-        label: i18n
-        help:
-          message: i18n
-        reloadPageIfChanged: true
-        inspector:
-          group: jumpmarker
-          position: 'before hashMenuTitle'
-    hashMenuTitle:
+    jumpMarkerTitle:
       type: string
       defaultValue: ''
       ui:
@@ -33,12 +22,8 @@
           message: i18n
         reloadPageIfChanged: false
         inspector:
-          hidden: 'ClientEval:node.properties.includeInHashMenu ? false : true'
           group: jumpmarker
           position: 'before sectionId'
-          editorOptions:
-            # Implements a simplified version of the title generation from CodeQ.JumpMarkers:Integration.Helper.NodeTitle
-            placeholder: "ClientEval: (node.properties.hashMenuTitle || node.properties.heroTitle || node.properties.title || '').replace(/<[^>]*>/g, ' ').substr().trim().replace(/(.*)[:.]$/, /*removeDotsFromTheEnd*/ '$1')"
     sectionId:
       type: string
       ui:
@@ -49,7 +34,7 @@
           editorOptions:
             # Implements the most common subset of CodeQ.JumpMarkers:Integration.Helper.NodeAnchorId,
             # fully implementing Carbon.String.urlize(value) would bloat the code too much
-            placeholder: "ClientEval:node.properties.includeInHashMenu ? (node.properties.id || node.properties.hashMenuTitle || node.properties.title || ('node-id-' + node.identifier)).replace('&nbsp;', '-').replace(/<[^>]*>/g, ' ').substr(0, 100).trim().toLowerCase().replaceAll('ä', 'ae').replaceAll('ü', 'ue').replaceAll('ö', 'oe').replaceAll('ß', 'ss').replace(/[^A-Za-z0-9\/]+/g, '-').trim().replace(/^.*?([a-z].*)$/, /*remove non-alpha chars from start*/ '$1').replace(/(.*)-$/, /*remove dashes from end*/ '$1') : ''"
+            placeholder: "ClientEval: (node.properties.jumpMarkerTitle || '').replace('&nbsp;', '-').replace(/<[^>]*>/g, ' ').substr(0, 100).trim().toLowerCase().replaceAll('ä', 'ae').replaceAll('ü', 'ue').replaceAll('ö', 'oe').replaceAll('ß', 'ss').replace(/[^A-Za-z0-9\/]+/g, '-').trim().replace(/^.*?([a-z].*)$/, /*remove non-alpha chars from start*/ '$1').replace(/(.*)-$/, /*remove dashes from end*/ '$1')"
         help:
           message: i18n
       validation:

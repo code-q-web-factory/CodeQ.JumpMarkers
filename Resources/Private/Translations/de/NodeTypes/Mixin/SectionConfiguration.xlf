@@ -6,15 +6,7 @@
 				<source>Jump marker and anchor</source>
 				<target>Sprungmarke und Anker</target>
 			</trans-unit>
-            <trans-unit id="properties.includeInHashMenu" xml:space="preserve">
-				<source>Show jump marker</source>
-                <target>Sprungmarken anzeigen</target>
-			</trans-unit>
-            <trans-unit id="properties.includeInHashMenu.ui.help.message" xml:space="preserve">
-				<source>This Element is shown in the jump marker navigation. You can control whether the jump mark navigation is displayed in the page settings.</source>
-                <target>Dieses Element wird in der Sprungmarken-Navigation angezeigt. Ob die Sprungmarken-Navigation angezeigt wird, kannst du in den Einstellungen der Seite steuern.</target>
-			</trans-unit>
-            <trans-unit id="properties.hashMenuTitle" xml:space="preserve">
+            <trans-unit id="properties.jumpMarkerTitle" xml:space="preserve">
 				<source>Jump marker title</source>
                 <target>Sprungmarken-Titel</target>
 			</trans-unit>

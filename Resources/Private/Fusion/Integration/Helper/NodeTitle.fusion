@@ -1,9 +1,0 @@
-prototype(CodeQ.JumpMarkers:Integration.Helper.NodeTitle) < prototype(Neos.Fusion:Value) {
-    # api
-    node = ${node}
-
-    # rendering
-    value = ${q(this.node).property('hashMenuTitle') || q(this.node).property('heroTitle') || q(this.node).property('title')}
-    value.@process.toText = ${String.trim(String.cropAtWord(String.stripTags(value), 50, '…'))}
-    value.@process.removeDotsFromTheEnd = ${(String.endsWith(value, ':') || String.endsWith(value, '.')) ? String.substr(value, 0, String.length(value) - 1) : value}
-}

@@ -5,13 +5,7 @@
             <trans-unit id="groups.jumpmarker" xml:space="preserve">
 				<source>Jump marker and anchor</source>
 			</trans-unit>
-            <trans-unit id="properties.includeInHashMenu" xml:space="preserve">
-				<source>Show in jump marker navigation</source>
-			</trans-unit>
-            <trans-unit id="properties.includeInHashMenu.ui.help.message" xml:space="preserve">
-				<source>This Element is shown in the jump marker navigation. You can control whether the jump mark navigation is displayed in the page settings.</source>
-			</trans-unit>
-            <trans-unit id="properties.hashMenuTitle" xml:space="preserve">
+            <trans-unit id="properties.jumpMarkerTitle" xml:space="preserve">
 				<source>Jump marker title</source>
 			</trans-unit>
             <trans-unit id="properties.sectionId.ui.help.message" xml:space="preserve">
