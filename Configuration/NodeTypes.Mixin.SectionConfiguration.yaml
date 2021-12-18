@@ -20,7 +20,7 @@
         label: i18n
         help:
           message: i18n
-        reloadPageIfChanged: false
+        reloadPageIfChanged: true
         inspector:
           group: jumpmarker
           position: 'before sectionId'
