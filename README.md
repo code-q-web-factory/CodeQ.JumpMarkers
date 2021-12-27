@@ -57,7 +57,7 @@ Here's an example of how to render a jump marker navigation
 ```
 prototype(YOUR.Site:Integration.Organism.HashMenu) < prototype(Neos.Fusion:Component) {
     items = Neos.Fusion:Map {
-        items = ${q(documentNode).children('main').children('[instanceof CodeQ.JumpMarkers:Mixin.SectionConfiguration][jumpMarkerTitle][_hidden != TRUE]').get()}
+        items = ${q(documentNode).children('main').children('[instanceof CodeQ.JumpMarkers:Mixin.SectionConfiguration][jumpMarkerTitle][jumpMarkerTitle!=""][_hidden != TRUE]').get()}
         itemName = 'node'
         itemRenderer = CodeQ.Link:Link {
             link = CodeQ.JumpMarkers:NodeAnchorId {
