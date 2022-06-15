@@ -30,6 +30,10 @@
 				<source>Copy link</source>
                 <target>Teilen-Link</target>
 			</trans-unit>
+            <trans-unit id="syncSectionId" xml:space="preserve">
+				<source>Synchronize section id with the jump marker title</source>
+				<target>Abschnitts-ID mit Titel synchronisieren</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

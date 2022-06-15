@@ -9,5 +9,9 @@
     },
     "neos": {
         "buildTargetDirectory": "../../../Public/JavaScript/AnchorView"
+    },
+    "dependencies": {
+        "@sindresorhus/slugify": "^2.1.0",
+        "lodash.unescape": "^4.0.1"
     }
 }
