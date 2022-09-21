@@ -23,6 +23,9 @@
             <trans-unit id="properties.sectionId.copy-uri" xml:space="preserve">
 				<source>Copy link</source>
 			</trans-unit>
+            <trans-unit id="syncSectionId" xml:space="preserve">
+				<source>Synchronize section id with the jump marker title</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
