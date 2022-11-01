@@ -3,36 +3,36 @@
 	<file original="" product-name="CodeQ.JumpMarkers" source-language="en" target-language="de" datatype="plaintext">
 		<body>
 			<trans-unit id="groups.jumpmarker" xml:space="preserve">
-				<source>Jump marker and anchor</source>
-				<target>Sprungmarke und Anker</target>
+				<source>Jump marker</source>
+				<target>Sprungmarke</target>
 			</trans-unit>
             <trans-unit id="properties.jumpMarkerTitle" xml:space="preserve">
-				<source>Jump marker title</source>
-                <target>Sprungmarken-Titel</target>
+				<source>Title</source>
+                <target>Titel</target>
 			</trans-unit>
-            <trans-unit id="properties.sectionId.ui.help.message" xml:space="preserve">
-				<source>Define a title in the jump mark navigation. You can control whether the jump mark navigation is displayed in the page settings.</source>
-                <target>Setze einen Titel für den Sprungmarken-Navigations-Eintrag. Ob die Sprungmarken-Navigation angezeigt wird, kannst du in den Einstellungen der Seite steuern.</target>
+            <trans-unit id="properties.jumpMarkerTitle.ui.help.message" xml:space="preserve">
+				<source>This title is used in a jump mark navigation. You can control whether the jump mark navigation is displayed in the page settings.</source>
+                <target>Dieser Titel wird in einer Sprungmarken-Navigation verwendet. Ob die Sprungmarken-Navigation angezeigt wird, kannst Du in den Seiteneinstellungen steuern.</target>
 			</trans-unit>
 			<trans-unit id="properties.sectionId" xml:space="preserve">
-				<source>Section id</source>
-				<target>Abschnitts-ID</target>
+				<source>URL fragment</source>
+				<target>URL-Fragment</target>
 			</trans-unit>
 			<trans-unit id="properties.sectionId.ui.help.message" xml:space="preserve">
-				<source>Enter a section ID of the type short-text-without-special-characters. After you click Save, a button for copying the link appears below it. This link can be pasted in the text editor or in fields of the Inspector and will lead directly to the section.</source>
-				<target>Gib eine Abschnitts-ID in der Art kurzer-text-ohne-sonderzeichen ein. Nachdem du auf Speichern klickst, erscheint darunter ein Button zum Kopieren des Links. Dieser Link im Texteditor oder in Feldern des Inspektors eingefügt werden und führt direkt zum Abschnitt.</target>
+				<source>Enter an URL fragment of the type short-text-without-special-characters. After you click Save, a button for copying the link appears below it. This link can be pasted in the text editor or in fields of the Inspector and will lead directly to the section.</source>
+				<target>Geben Sie ein URL-Fragment vom Typ kurztext-ohne-sonderzeichen ein. Nachdem Du auf Speichern geklickt hast, erscheint darunter eine Schaltfläche zum Kopieren des Links. Dieser Link kann in den Texteditor oder in Felder des Inspektors eingefügt werden und führt direkt zu dem Abschnitt.</target>
 			</trans-unit>
             <trans-unit id="properties.sectionId.copy-neos-link" xml:space="preserve">
 				<source>Copy Neos link</source>
-                <target>Neos-Link</target>
+                <target>Kopiere Neos-Link</target>
 			</trans-unit>
             <trans-unit id="properties.sectionId.copy-uri" xml:space="preserve">
 				<source>Copy link</source>
-                <target>Teilen-Link</target>
+                <target>Kopiere Link</target>
 			</trans-unit>
             <trans-unit id="syncSectionId" xml:space="preserve">
-				<source>Synchronize section id with the jump marker title</source>
-				<target>Abschnitts-ID mit Titel synchronisieren</target>
+				<source>Synchronize the URL fragment with the title.</source>
+				<target>URL-Fragment mit dem Titel synchronisieren.</target>
 			</trans-unit>
 		</body>
 	</file>

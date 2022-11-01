@@ -3,19 +3,19 @@
 	<file original="" product-name="CodeQ.JumpMarkers" source-language="en" datatype="plaintext">
 		<body>
             <trans-unit id="groups.jumpmarker" xml:space="preserve">
-				<source>Jump marker and anchor</source>
+				<source>Jump marker</source>
 			</trans-unit>
             <trans-unit id="properties.jumpMarkerTitle" xml:space="preserve">
-				<source>Jump marker title</source>
+				<source>Title</source>
 			</trans-unit>
-            <trans-unit id="properties.sectionId.ui.help.message" xml:space="preserve">
-				<source>Define a title in the jump mark navigation. You can control whether the jump mark navigation is displayed in the page settings.</source>
+            <trans-unit id="properties.jumpMarkerTitle.ui.help.message" xml:space="preserve">
+				<source>This title is used in a jump mark navigation. You can control whether the jump mark navigation is displayed in the page settings.</source>
 			</trans-unit>
 			<trans-unit id="properties.sectionId" xml:space="preserve">
-				<source>Section id</source>
+				<source>URL fragment</source>
 			</trans-unit>
 			<trans-unit id="properties.sectionId.ui.help.message" xml:space="preserve">
-				<source>Enter a section ID of the type short-text-without-special-characters. After you click Save, a button for copying the link appears below it. This link can be pasted in the text editor or in fields of the Inspector and will lead directly to the section.</source>
+				<source>Enter an URL fragment of the type short-text-without-special-characters. After you click Save, a button for copying the link appears below it. This link can be pasted in the text editor or in fields of the Inspector and will lead directly to the section.</source>
 			</trans-unit>
             <trans-unit id="properties.sectionId.copy-neos-link" xml:space="preserve">
 				<source>Copy Neos link</source>
@@ -24,7 +24,7 @@
 				<source>Copy link</source>
 			</trans-unit>
             <trans-unit id="syncSectionId" xml:space="preserve">
-				<source>Synchronize section id with the jump marker title</source>
+				<source>Synchronize the URL fragment with the title.</source>
 			</trans-unit>
 		</body>
 	</file>
