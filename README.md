@@ -3,16 +3,16 @@
 
 # CodeQ.JumpMarkers
 
-This package makes rendering of a jump marker navigation for content nodes easy.
+This package allows linking to a content node as a jump marker and rendering a jump marker navigation.
 
 ## Installation
 
 CodeQ.JumpMarkers is available via packagist run `composer require codeq/jumpmarkers`.
 We use semantic versioning so every breaking change will increase the major-version number.
 
-## Usage
+## Configuration
 
-### 1. Configs for Neos content nodes
+### 1. Extend content nodes with jump marker properties
 
 Add the `CodeQ.JumpMarkers:Mixin.SectionConfiguration` mixin to any content NodeType 
 that you would want to link in a jump marker navigation, or as a permalink with a hash.
@@ -27,7 +27,35 @@ E.g. this code adds such ability to every Content NodeType:
 
 ![inspector editor](editor-demo.png)
 
-### 2. Render the anchors in the NodeType rendering
+### 2. Make content nodes available in the link search dialog of the backend
+
+Normally, Neos offers only document nodes for selection in its link search dialog. To list content nodes as well, 
+you must allow this accordingly in the node configuration and set nodeTypes to 
+`['Neos.Neos:Document', 'Neos.Neos:Content']`, for example:
+
+```
+'YOUR.Site:Content.Text':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: Text
+    icon: file-text
+    position: 200
+    inlineEditable: true
+  properties:
+    text:
+      options:
+        ui:
+          inline:
+            editorOptions:
+              linking:
+                nodeTypes: ['Neos.Neos:Document', 'Neos.Neos:Content']
+```
+
+Note that this allows any content node to be selected as a link target, including those that have not yet been assigned 
+an anchor id and therefore cannot be linked properly in the frontend.
+
+### 3. Render the anchor id in the frontend
 
 You can either render the id on the item itself with:
 ```
@@ -50,7 +78,7 @@ prototype(Neos.Neos:Content) {
 }
 ```
 
-### 3. Render the jump marker navigation
+### 4. Render the jump marker navigation in the frontend
 
 Here's an example of how to render a jump marker navigation
 
@@ -82,24 +110,26 @@ prototype(YOUR.Site:Integration.Organism.HashMenu) < prototype(Neos.Fusion:Compo
 }
 ```
 
-### 4. Usage for editors
+## Usage by editors
 
-#### Jump markers
-Enable the jump marker for the content NodeType you want to render in the jump marker navigation by setting a title 
+### Create jump marker navigation
+
+Enable the jump marker for the content node you want to render in the jump marker navigation by setting a title 
 and optionally a manual anchor id.
 
-#### Permalinks to content nodes
+### Set permalink to content node
+
 Choose some content node that you would like to link to, and fill in the `sectionId` property in the inspector.
 
-After that you will see a button appear below the field to copy the link to this node to the clipboard.
+Next, either (a) set a link to the content node by selecting the node in a link search dialog, 
+or (b) copy the content node's uri to the clipboard via the "Copy Neos link" or "Copy link" button and paste it into 
+the "insert link" field in the Aloha editor, and you're done!
 
-When you click that button, the link to the given node will be copied to the clipboard. Paste it in the "insert link"
-field in Aloha editor, and you are done!
-
+## Migration
 
 ### Update from v1.0
 
-The property names have changes and some fallbacks were removed, so an automatic migration is not appled.
+The property names have changed and some fallbacks were removed, so an automatic migration is not applied.
 `CodeQ.JumpMarkers:Mixin.SectionConfiguration.DefaultDisabled` was removed,
 `includeInHashMenu` was removed, `hashMenuTitle` was renamed to `jumpMarkerTitle`.
 
