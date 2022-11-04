@@ -29,9 +29,9 @@ E.g. this code adds such ability to every Content NodeType:
 
 ### 2. Make content nodes available in the link search dialog of the backend
 
-Normally, Neos offers only document nodes for selection in its link search dialog. To list content nodes as well, 
-you must allow this accordingly in the node configuration and set nodeTypes to 
-`['Neos.Neos:Document', 'Neos.Neos:Content']`, for example:
+Normally, Neos offers only document nodes for selection in its link search dialog. To list the corresponding content 
+nodes as well, you must allow this in the link configuration and set nodeTypes to 
+`['Neos.Neos:Document', 'CodeQ.JumpMarkers:Mixin.SectionConfiguration']`, for example:
 
 ```
 'YOUR.Site:Content.Text':
@@ -49,7 +49,7 @@ you must allow this accordingly in the node configuration and set nodeTypes to
           inline:
             editorOptions:
               linking:
-                nodeTypes: ['Neos.Neos:Document', 'Neos.Neos:Content']
+                nodeTypes: ['Neos.Neos:Document', 'CodeQ.JumpMarkers:Mixin.SectionConfiguration']
 ```
 
 Note that this allows any content node to be selected as a link target, including those that have not yet been assigned 
