@@ -6,7 +6,7 @@
     "require": {
         "ext-json": "*",
         "neos/neos": "^4.3 || ^5.0 || ^7.0 || dev-master",
-        "carbon/eel": "^1.0"
+        "carbon/eel": "^1.0 || ^2.0 "
     },
     "autoload": {
         "psr-4": {
