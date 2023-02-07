@@ -44,12 +44,25 @@ nodes as well, you must allow this in the link configuration and set nodeTypes t
     inlineEditable: true
   properties:
     text:
-      options:
-        ui:
-          inline:
-            editorOptions:
-              linking:
-                nodeTypes: ['Neos.Neos:Document', 'CodeQ.JumpMarkers:Mixin.SectionConfiguration']
+      type: string
+      defaultValue: ''
+      ui:
+        inlineEditable: true
+        inline:
+          editorOptions:
+            linking:
+              nodeTypes: ['Neos.Neos:Document', 'CodeQ.JumpMarkers:Mixin.SectionConfiguration']
+    link:
+      type: string
+      ui:
+        label: 'Link'
+        reloadPageIfChanged: false
+        inspector:
+          group: general
+          editor: 'Neos.Neos/Inspector/Editors/LinkEditor'
+          editorOptions:
+            linking:
+              nodeTypes: ['Neos.Neos:Document', 'CodeQ.JumpMarkers:Mixin.SectionConfiguration']
 ```
 
 Note that this allows any content node to be selected as a link target, including those that have not yet been assigned 
