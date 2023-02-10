@@ -29,9 +29,12 @@ E.g. this code adds such ability to every Content NodeType:
 
 ### 2. Make content nodes available in the link search dialog of the backend
 
-Normally, Neos offers only document nodes for selection in its link search dialog. To list the corresponding content 
-nodes as well, you must allow this in the link configuration and set nodeTypes to 
-`['Neos.Neos:Document', 'CodeQ.JumpMarkers:Mixin.SectionConfiguration']`, for example:
+By default, Neos offers only document nodes for selection in its link search dialog. 
+You can also allow content nodes with a section title or id set:
+![linking demo](linking-demo.png)
+
+To enable this feature, you must allow the SectionConfiguration in the link configuration 
+nodeTypes option like this:
 
 ```
 'YOUR.Site:Content.Text':
