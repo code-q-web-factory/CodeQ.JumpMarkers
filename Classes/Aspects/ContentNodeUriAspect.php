@@ -1,6 +1,8 @@
 <?php
 namespace CodeQ\JumpMarkers\Aspects;
 
+use Neos\ContentRepository\Exception\NodeException;
+use Neos\Eel\Exception;
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Aop\JoinPointInterface;
 use Neos\Flow\Mvc\ActionRequest;
@@ -19,8 +21,11 @@ class ContentNodeUriAspect
 {
     /**
      * @Flow\Around("method(Neos\Flow\Mvc\Routing\UriBuilder->uriFor())")
-     * @param \Neos\Flow\Aop\JoinPointInterface $joinPoint The current join point
+     * @param JoinPointInterface $joinPoint The current join point
      * @return string The result of the target method if it has not been intercepted
+     * @throws Exception
+     * @throws NodeException
+     * @return string the rendered URI
      */
     public function rewriteContentNodeUris(JoinPointInterface $joinPoint)
     {
@@ -30,16 +35,15 @@ class ContentNodeUriAspect
 
         $contentNode = $arguments['controllerArguments']['node'] ?? null;
         if (!$request->getMainRequest()->hasArgument('node') || !$contentNode instanceof Node
-            || $contentNode->getNodeType()->isOfType('Neos.Neos:Document') || !$contentNode->hasProperty('sectionId')
-        ) {
+            || !$contentNode->getNodeType()->isOfType('CodeQ.JumpMarkers:Mixin.SectionConfiguration')
+            || (!$contentNode->hasProperty('jumpMarkerTitle') && $contentNode->hasProperty('sectionId'))) {
             return $joinPoint->getAdviceChain()->proceed($joinPoint);
         }
 
+        // SectionConfiguration nodes with a title or id only
         $q = new FlowQuery([$contentNode]);
         $pageNode = $q->closest('[instanceof Neos.Neos:Document]')->get(0);
-        $result = $this->generateUriForNode($joinPoint, $pageNode, $contentNode);
-
-        return $result;
+        return $this->generateUriForNode($joinPoint, $pageNode, $contentNode);
     }
 
     /**
@@ -50,6 +54,7 @@ class ContentNodeUriAspect
      * @param NodeInterface $pageNode
      * @param NodeInterface $contentNode
      * @return string $uri
+     * @throws NodeException
      */
     public function generateUriForNode(JoinPointInterface $joinPoint, NodeInterface $pageNode, NodeInterface $contentNode)
     {
