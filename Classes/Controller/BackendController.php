@@ -46,7 +46,7 @@ class BackendController extends ActionController
     }
 
     /**
-     * Get an uri to a link that might now be live yet.
+     * Get an uri to a link that might not be live yet.
      *
      * The API is very lazily build, mainly focusing on the best case.
      *
