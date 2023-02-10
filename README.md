@@ -123,6 +123,10 @@ prototype(YOUR.Site:Integration.Organism.HashMenu) < prototype(Neos.Fusion:Compo
 }
 ```
 
+If your editors should be able to choose if the jump marker navigation is shown, 
+use `CodeQ.JumpMarkers:Mixin.PageConfiguration` as a super type of the document and then
+render the menu like this: `<YOUR.Site:Integration.Organism.HashMenu @if={q(node).property('showJumpMarkersMenu')}/>`
+
 ## Usage by editors
 
 ### Create jump marker navigation
@@ -140,7 +144,12 @@ the "insert link" field in the Aloha editor, and you're done!
 
 ## Migration
 
-### Update from v1.0
+### Update from v2.0 to v3.0
+
+The `CodeQ.JumpMarkers:Mixin.PageConfiguration` property `heroHashMenu` was replaces with `showJumpMarkersMenu` for clarity.
+A migration is available: `./flow node:migrate --version 20230210175800`
+
+### Update from v1.0 to v2.0
 
 The property names have changed and some fallbacks were removed, so an automatic migration is not applied.
 `CodeQ.JumpMarkers:Mixin.SectionConfiguration.DefaultDisabled` was removed,

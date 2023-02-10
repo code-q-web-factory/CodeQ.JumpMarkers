@@ -2,7 +2,7 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file original="" product-name="CodeQ.JumpMarkers" source-language="en" datatype="plaintext">
 		<body>
-            <trans-unit id="properties.heroHashMenu" xml:space="preserve">
+            <trans-unit id="properties.showJumpMarkersMenu" xml:space="preserve">
 				<source>Show jump marker navigation</source>
 			</trans-unit>
 		</body>

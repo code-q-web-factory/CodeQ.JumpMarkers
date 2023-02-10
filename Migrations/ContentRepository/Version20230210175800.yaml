@@ -1,0 +1,19 @@
+up:
+  comments: 'Migrate CodeQ.JumpMarkers:Mixin.PageConfiguration property heroHashMenu to showJumpMarkersMenu'
+  migration:
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'CodeQ.JumpMarkers:Mixin.PageConfiguration'
+            withSubTypes: true
+      transformations:
+        -
+          type: 'RenameProperty'
+          settings:
+            from: 'heroHashMenu'
+            to: 'showJumpMarkersMenu'
+
+down:
+  comments: 'No down migration available'
