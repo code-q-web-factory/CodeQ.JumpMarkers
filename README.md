@@ -68,8 +68,8 @@ nodeTypes option like this:
               nodeTypes: ['Neos.Neos:Document', 'CodeQ.JumpMarkers:Mixin.SectionConfiguration']
 ```
 
-Note that this allows any content node to be selected as a link target, including those that have not yet been assigned 
-an anchor id and therefore cannot be linked properly in the frontend.
+Our [ServicesNodesControllerAspect](Classes/Aspects/ServicesNodesControllerAspect.php) will make sure that
+only content nodes with a jumpMarkerTitle or sectionId will be shown in the list.
 
 ### 3. Render the anchor id in the frontend
 

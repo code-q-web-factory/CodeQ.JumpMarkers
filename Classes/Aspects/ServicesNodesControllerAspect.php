@@ -11,7 +11,7 @@ use Neos\Utility\Exception\PropertyNotAccessibleException;
 use Neos\Utility\ObjectAccess;
 
 /**
- * Aspect to generate the Uri to a content node as a link to its parent document node while attaching a Uri fragment.
+ * Aspect filter only SectionConfigurations with a jumpMarkerTitle or sectionId as possible linking targets.
  *
  * @Flow\Scope("singleton")
  * @Flow\Aspect
