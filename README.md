@@ -156,7 +156,8 @@ A migration is available: `./flow node:migrate --version 20230210175800`
 
 The property names have changed and some fallbacks were removed, so an automatic migration is not applied.
 `CodeQ.JumpMarkers:Mixin.SectionConfiguration.DefaultDisabled` was removed,
-`includeInHashMenu` was removed, `hashMenuTitle` was renamed to `jumpMarkerTitle`.
+`includeInHashMenu` was removed.
+`hashMenuTitle` was renamed to `jumpMarkerTitle`, a migration for this is available: `./flow node:migrate --version 20230213183100`
 
 ## Credits
 

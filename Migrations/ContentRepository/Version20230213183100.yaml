@@ -1,0 +1,19 @@
+up:
+  comments: 'Migrate CodeQ.JumpMarkers property jumpMarkerTitle to jumpMarkerTitle'
+  migration:
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'CodeQ.JumpMarkers:Mixin.SectionConfiguration'
+            withSubTypes: true
+      transformations:
+        -
+          type: 'RenameProperty'
+          settings:
+            from: 'hashMenuTitle'
+            to: 'jumpMarkerTitle'
+
+down:
+  comments: 'No down migration available'
