@@ -1,4 +1,5 @@
 <?php
+
 namespace CodeQ\JumpMarkers\Aspects;
 
 use Neos\ContentRepository\Exception\NodeException;
@@ -23,9 +24,9 @@ class ContentNodeUriAspect
      * @Flow\Around("method(Neos\Flow\Mvc\Routing\UriBuilder->uriFor())")
      * @param JoinPointInterface $joinPoint The current join point
      * @return string The result of the target method if it has not been intercepted
-     * @throws Exception
-     * @throws NodeException
      * @return string the rendered URI
+     * @throws NodeException
+     * @throws Exception
      */
     public function rewriteContentNodeUris(JoinPointInterface $joinPoint)
     {

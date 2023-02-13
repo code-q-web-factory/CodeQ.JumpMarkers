@@ -1,4 +1,5 @@
 <?php
+
 namespace CodeQ\JumpMarkers\Aspects;
 
 use Neos\ContentRepository\Domain\Service\NodeTypeManager;
@@ -49,7 +50,7 @@ class ServicesNodesControllerAspect
             'contextNode' => $contextNode,
         ] = $joinPoint->getMethodArguments();
 
-        if($nodeIdentifiers !== []
+        if ($nodeIdentifiers !== []
             || array_search('CodeQ.JumpMarkers:Mixin.SectionConfiguration', $nodeTypes) == false) {
             return $joinPoint->getAdviceChain()->proceed($joinPoint);
         }
@@ -57,7 +58,7 @@ class ServicesNodesControllerAspect
         // filter
         $defaultSearchableNodeTypeNames = [];
         foreach ($nodeTypes as $nodeTypeName) {
-            if($nodeTypeName == 'CodeQ.JumpMarkers:Mixin.SectionConfiguration') {
+            if ($nodeTypeName == 'CodeQ.JumpMarkers:Mixin.SectionConfiguration') {
                 continue;
             }
             if (!$this->nodeTypeManager->hasNodeType($nodeTypeName)) {
@@ -80,7 +81,7 @@ class ServicesNodesControllerAspect
         $searchableNodeTypeNames = array_merge($defaultSearchableNodeTypeNames, $sectionConfigurationSearchableNodeTypeNames);
         $nodes = array_filter(
             $this->nodeSearchService->findByProperties($searchTerm, $searchableNodeTypeNames, $contentContext, $contextNode),
-            function($node) use ($defaultSearchableNodeTypeNames) {
+            function ($node) use ($defaultSearchableNodeTypeNames) {
                 return array_search($node->getNodeType(), $defaultSearchableNodeTypeNames) != false
                     || $node->getProperty('jumpMarkerTitle') || $node->getProperty('sectionId');
             }

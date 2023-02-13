@@ -31,6 +31,7 @@ E.g. this code adds such ability to every Content NodeType:
 
 By default, Neos offers only document nodes for selection in its link search dialog. 
 You can also allow content nodes with a section title or id set:
+
 ![linking demo](linking-demo.png)
 
 To enable this feature, you must allow the SectionConfiguration in the link configuration 
