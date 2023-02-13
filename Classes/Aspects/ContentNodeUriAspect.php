@@ -36,7 +36,7 @@ class ContentNodeUriAspect
         $contentNode = $arguments['controllerArguments']['node'] ?? null;
         if (!$request->getMainRequest()->hasArgument('node') || !$contentNode instanceof Node
             || !$contentNode->getNodeType()->isOfType('CodeQ.JumpMarkers:Mixin.SectionConfiguration')
-            || (!$contentNode->hasProperty('jumpMarkerTitle') && $contentNode->hasProperty('sectionId'))) {
+            || (!$contentNode->getProperty('jumpMarkerTitle') && !$contentNode->getProperty('sectionId'))) {
             return $joinPoint->getAdviceChain()->proceed($joinPoint);
         }
 
