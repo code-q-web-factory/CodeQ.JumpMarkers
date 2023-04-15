@@ -23,7 +23,7 @@
         reloadPageIfChanged: true
         inspector:
           group: jumpmarker
-          position: 'before sectionId'
+          position: 100
     sectionId:
       type: string
       ui:
@@ -31,6 +31,7 @@
         label: i18n
         inspector:
           group: jumpmarker
+          position: 200
           editor: 'CodeQ.JumpMarkers/Inspector/Editors/SegmentIdEditor'
           editorOptions:
             sectionId: "ClientEval:node.properties.jumpMarkerTitle"
