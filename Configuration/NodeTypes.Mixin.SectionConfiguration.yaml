@@ -11,6 +11,7 @@
         anchor:
           label: 'Anchor view'
           group: jumpmarker
+          position: 300
           view: 'CodeQ.JumpMarkers/Views/AnchorView'
   properties:
     jumpMarkerTitle:
