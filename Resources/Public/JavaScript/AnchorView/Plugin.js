@@ -4020,7 +4020,8 @@ var AnchorView = (_dec = (0, _reactRedux.connect)(function (state) {
 				'div',
 				{ style: {
 						display: 'flex',
-						justifyContent: 'space-between'
+						flexDirection: 'column',
+						gap: '8px 0px'
 					} },
 				_react2.default.createElement(
 					_reactUiComponents.Button,

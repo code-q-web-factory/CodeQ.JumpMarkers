@@ -99,7 +99,8 @@ export default class AnchorView extends Component {
         return this.getSectionId() && (
         	<div style={{
 				display: 'flex',
-				justifyContent: 'space-between'
+				flexDirection: 'column',
+				gap: '8px 0px'
 			}}>
 				<Button style="brand" onClick={this.copyNeosLinkToClipboard}>
 					<I18n
