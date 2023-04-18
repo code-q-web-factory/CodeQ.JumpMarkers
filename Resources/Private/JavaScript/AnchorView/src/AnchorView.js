@@ -82,14 +82,10 @@ export default class AnchorView extends Component {
 		const {i18nRegistry} = this.props;
 
         return this.getSectionId() && (
-        	<div style={{
-				display: 'flex',
-				gap: '0px 8px',
-			}}>
+        	<div className={style.flexAuto}>
 				<Button
 					style="brand"
 					onClick={this.copyNeosLinkToClipboard}
-					className={style.copyNeosLinkButton}
 					title={i18nRegistry.translate(
 						'CodeQ.JumpMarkers:NodeTypes.Mixin.SectionConfiguration:properties.sectionId.copy-neos-link.tooltip',
 					)}
@@ -102,7 +98,6 @@ export default class AnchorView extends Component {
 				<Button
 					style="brand"
 					onClick={this.copyUriToClipboard}
-					className={style.copyUriButton}
 					title={i18nRegistry.translate(
 						'CodeQ.JumpMarkers:NodeTypes.Mixin.SectionConfiguration:properties.sectionId.copy-uri.tooltip'
 					)}

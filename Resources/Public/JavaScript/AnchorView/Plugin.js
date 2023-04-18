@@ -4005,16 +4005,12 @@ var AnchorView = (_dec = (0, _reactRedux.connect)(function (state) {
 
 			return this.getSectionId() && _react2.default.createElement(
 				'div',
-				{ style: {
-						display: 'flex',
-						gap: '0px 8px'
-					} },
+				{ className: _style2.default.flexAuto },
 				_react2.default.createElement(
 					_reactUiComponents.Button,
 					{
 						style: 'brand',
 						onClick: this.copyNeosLinkToClipboard,
-						className: _style2.default.copyNeosLinkButton,
 						title: i18nRegistry.translate('CodeQ.JumpMarkers:NodeTypes.Mixin.SectionConfiguration:properties.sectionId.copy-neos-link.tooltip')
 					},
 					this.getIcon(this.state.copyNeosLinkState),
@@ -4027,7 +4023,6 @@ var AnchorView = (_dec = (0, _reactRedux.connect)(function (state) {
 					{
 						style: 'brand',
 						onClick: this.copyUriToClipboard,
-						className: _style2.default.copyUriButton,
 						title: i18nRegistry.translate('CodeQ.JumpMarkers:NodeTypes.Mixin.SectionConfiguration:properties.sectionId.copy-uri.tooltip')
 					},
 					this.getIcon(this.state.copyUriState),
@@ -4263,7 +4258,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
-module.exports = {"syncButton":"style__syncButton___3cjXz","copyNeosLinkButton":"style__copyNeosLinkButton___iQwVj","copyUriButton":"style__copyUriButton___6kNyN"};
+module.exports = {"syncButton":"style__syncButton___3cjXz","flexAuto":"style__flexAuto___2D6Q-"};
 
 /***/ })
 

@@ -1,11 +1,12 @@
 .style__syncButton___3cjXz {
     outline: none !important;
 }
-.style__copyNeosLinkButton___iQwVj {
-	flex: 1;
+.style__flexAuto___2D6Q- {
+	display: flex;
+	gap: 0px 8px;
 }
-.style__copyUriButton___6kNyN {
-	flex: 1;
+.style__flexAuto___2D6Q- > * {
+	flex: auto;
 }
 
 
