@@ -27,16 +27,16 @@
                 <target>Neos-Link</target>
             </trans-unit>
             <trans-unit id="properties.sectionId.copy-neos-link.tooltip" xml:space="preserve">
-                <source>Copy the link to the section as Neos URI (node://)</source>
-                <target>Kopieren Sie den Link zu dem Abschnitt als Neos URI (node://)</target>
+                <source>Copy the link to the section as Neos URI (node://).</source>
+                <target>Kopieren Sie den Link zu dem Abschnitt als Neos URI (node://).</target>
             </trans-unit>
             <trans-unit id="properties.sectionId.copy-uri.label" xml:space="preserve">
                 <source>Link</source>
                 <target>Link</target>
             </trans-unit>
             <trans-unit id="properties.sectionId.copy-uri.tooltip" xml:space="preserve">
-                <source>Copy the link to the section as an absolute URI</source>
-                <target>Kopieren Sie den Link zum Abschnitt als absolute URI</target>
+                <source>Copy the link to the section as an absolute URI (https://).</source>
+                <target>Kopieren Sie den Link zum Abschnitt als absolute URI (https://).</target>
             </trans-unit>
             <trans-unit id="syncSectionId" xml:space="preserve">
 				<source>Synchronize the URL fragment with the title.</source>

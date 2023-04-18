@@ -21,13 +21,13 @@
 				<source>Neos link</source>
 			</trans-unit>
 			<trans-unit id="properties.sectionId.copy-neos-link.tooltip" xml:space="preserve">
-                <source>Copy the link to the section as Neos URI (node://)</source>
+                <source>Copy the link to the section as Neos URI (node://).</source>
             </trans-unit>
             <trans-unit id="properties.sectionId.copy-uri.label" xml:space="preserve">
 				<source>Link</source>
 			</trans-unit>
 			<trans-unit id="properties.sectionId.copy-uri.tooltip" xml:space="preserve">
-                <source>Copy the link to the section as an absolute URI</source>
+                <source>Copy the link to the section as an absolute URI (https://).</source>
             </trans-unit>
             <trans-unit id="syncSectionId" xml:space="preserve">
 				<source>Synchronize the URL fragment with the title.</source>
