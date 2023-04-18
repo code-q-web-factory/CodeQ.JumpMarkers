@@ -27,6 +27,9 @@ Neos:
         CodeQ.JumpMarkers/Views: 'resource://CodeQ.JumpMarkers/Public/JavaScript/Inspector/Views'
     Ui:
       resources:
+        stylesheets:
+          'CodeQ.JumpMarkers:AnchorView':
+            resource: resource://CodeQ.JumpMarkers/Public/JavaScript/AnchorView/Plugin.css
         javascript:
           'CodeQ.JumpMarkers:AnchorView':
             resource: resource://CodeQ.JumpMarkers/Public/JavaScript/AnchorView/Plugin.js

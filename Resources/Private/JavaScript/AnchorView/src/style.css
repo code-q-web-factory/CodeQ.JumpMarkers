@@ -1,3 +1,9 @@
 .syncButton {
     outline: none !important;
 }
+.copyNeosLinkButton {
+	flex: 1;
+}
+.copyUriButton {
+	flex: 1;
+}
