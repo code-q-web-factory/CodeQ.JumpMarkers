@@ -17,12 +17,18 @@
 			<trans-unit id="properties.sectionId.ui.help.message" xml:space="preserve">
 				<source>Enter here an URL fragment of the type lowercase-with-hyphens (without special characters). After you click Save, a button for copying the link appears below it. This link can be pasted in the text editor or in fields of the Inspector and will lead directly to the section.</source>
 			</trans-unit>
-            <trans-unit id="properties.sectionId.copy-neos-link" xml:space="preserve">
-				<source>Copy Neos link</source>
+            <trans-unit id="properties.sectionId.copy-neos-link.label" xml:space="preserve">
+				<source>Neos link</source>
 			</trans-unit>
-            <trans-unit id="properties.sectionId.copy-uri" xml:space="preserve">
-				<source>Copy link</source>
+			<trans-unit id="properties.sectionId.copy-neos-link.tooltip" xml:space="preserve">
+                <source>Copy the link to the section as Neos URI (node://).</source>
+            </trans-unit>
+            <trans-unit id="properties.sectionId.copy-uri.label" xml:space="preserve">
+				<source>Link</source>
 			</trans-unit>
+			<trans-unit id="properties.sectionId.copy-uri.tooltip" xml:space="preserve">
+                <source>Copy the link to the section as an absolute URI (https://).</source>
+            </trans-unit>
             <trans-unit id="syncSectionId" xml:space="preserve">
 				<source>Synchronize the URL fragment with the title.</source>
 			</trans-unit>

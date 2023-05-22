@@ -22,14 +22,22 @@
 				<source>Enter here an URL fragment of the type lowercase-with-hyphens (without special characters). After you click Save, a button for copying the link appears below it. This link can be pasted in the text editor or in fields of the Inspector and will lead directly to the section.</source>
 				<target>Gib hier ein URL-Fragment in der Form kleinbuchstaben-mit-bindestrichen (ohne Sonderzeichen) ein. Nachdem Du auf Speichern geklickt hast, erscheint darunter eine Schaltfläche zum Kopieren des Links. Dieser Link kann in den Texteditor oder in Felder des Inspektors eingefügt werden und führt direkt zu dem Abschnitt.</target>
 			</trans-unit>
-            <trans-unit id="properties.sectionId.copy-neos-link" xml:space="preserve">
-				<source>Copy Neos link</source>
-                <target>Kopiere Neos-Link</target>
-			</trans-unit>
-            <trans-unit id="properties.sectionId.copy-uri" xml:space="preserve">
-				<source>Copy link</source>
-                <target>Kopiere Link</target>
-			</trans-unit>
+            <trans-unit id="properties.sectionId.copy-neos-link.label" xml:space="preserve">
+                <source>Neos link</source>
+                <target>Neos-Link</target>
+            </trans-unit>
+            <trans-unit id="properties.sectionId.copy-neos-link.tooltip" xml:space="preserve">
+                <source>Copy the link to the section as Neos URI (node://).</source>
+                <target>Kopieren Sie den Link zu dem Abschnitt als Neos URI (node://).</target>
+            </trans-unit>
+            <trans-unit id="properties.sectionId.copy-uri.label" xml:space="preserve">
+                <source>Link</source>
+                <target>Link</target>
+            </trans-unit>
+            <trans-unit id="properties.sectionId.copy-uri.tooltip" xml:space="preserve">
+                <source>Copy the link to the section as an absolute URI (https://).</source>
+                <target>Kopieren Sie den Link zum Abschnitt als absolute URI (https://).</target>
+            </trans-unit>
             <trans-unit id="syncSectionId" xml:space="preserve">
 				<source>Synchronize the URL fragment with the title.</source>
 				<target>URL-Fragment mit dem Titel synchronisieren.</target>

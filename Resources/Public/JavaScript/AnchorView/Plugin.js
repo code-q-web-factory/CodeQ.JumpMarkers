@@ -3893,7 +3893,7 @@ exports.default = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _dec, _class, _class2, _temp2;
+var _dec, _dec2, _class, _class2, _temp2;
 
 var _react = __webpack_require__(/*! react */ "./node_modules/@neos-project/neos-ui-extensibility/src/shims/vendor/react/index.js");
 
@@ -3907,6 +3907,8 @@ var _reactUiComponents = __webpack_require__(/*! @neos-project/react-ui-componen
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/@neos-project/neos-ui-extensibility/src/shims/vendor/react-redux/index.js");
 
+var _neosUiDecorators = __webpack_require__(/*! @neos-project/neos-ui-decorators */ "./node_modules/@neos-project/neos-ui-extensibility/src/shims/neosProjectPackages/neos-ui-decorators/index.js");
+
 var _neosUiReduxStore = __webpack_require__(/*! @neos-project/neos-ui-redux-store */ "./node_modules/@neos-project/neos-ui-extensibility/src/shims/neosProjectPackages/neos-ui-redux-store/index.js");
 
 var _neosUiI18n = __webpack_require__(/*! @neos-project/neos-ui-i18n */ "./node_modules/@neos-project/neos-ui-extensibility/src/shims/neosProjectPackages/neos-ui-i18n/index.js");
@@ -3914,6 +3916,10 @@ var _neosUiI18n = __webpack_require__(/*! @neos-project/neos-ui-i18n */ "./node_
 var _neosUiI18n2 = _interopRequireDefault(_neosUiI18n);
 
 var _plowJs = __webpack_require__(/*! plow-js */ "./node_modules/@neos-project/neos-ui-extensibility/src/shims/vendor/plow-js/index.js");
+
+var _style = __webpack_require__(/*! ./style.css */ "./src/style.css");
+
+var _style2 = _interopRequireDefault(_style);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3929,7 +3935,11 @@ var AnchorView = (_dec = (0, _reactRedux.connect)(function (state) {
 		focusedNode: _neosUiReduxStore.selectors.CR.Nodes.focusedSelector(state),
 		transientSectionId: (0, _plowJs.$get)('sectionId.value', _neosUiReduxStore.selectors.UI.Inspector.transientValues(state))
 	};
-}), _dec(_class = (_temp2 = _class2 = function (_Component) {
+}), _dec2 = (0, _neosUiDecorators.neos)(function (globalRegistry) {
+	return {
+		i18nRegistry: globalRegistry.get('i18n')
+	};
+}), _dec(_class = _dec2(_class = (_temp2 = _class2 = function (_Component) {
 	_inherits(AnchorView, _Component);
 
 	function AnchorView() {
@@ -3977,68 +3987,48 @@ var AnchorView = (_dec = (0, _reactRedux.connect)(function (state) {
 			document.execCommand('copy');
 			textArea.parentNode.removeChild(textArea);
 		}, _this.getIcon = function (state) {
-			return _react2.default.createElement(
-				'div',
-				{ style: {
-						display: 'inline-block',
-						width: '16px',
-						height: '16px',
-						fill: 'white',
-						marginLeft: '8px',
-						verticalAlign: 'sub'
-					} },
-				state === 'default' ? _react2.default.createElement(
-					'svg',
-					{ viewBox: '0 0 896 1024', width: '100%', xmlns: 'http://www.w3.org/2000/svg' },
-					_react2.default.createElement('path', {
-						d: 'M128 768h256v64H128v-64z m320-384H128v64h320v-64z m128 192V448L384 640l192 192V704h320V576H576z m-288-64H128v64h160v-64zM128 704h160v-64H128v64z m576 64h64v128c-1 18-7 33-19 45s-27 18-45 19H64c-35 0-64-29-64-64V192c0-35 29-64 64-64h192C256 57 313 0 384 0s128 57 128 128h192c35 0 64 29 64 64v320h-64V320H64v576h640V768zM128 256h512c0-35-29-64-64-64h-64c-35 0-64-29-64-64s-29-64-64-64-64 29-64 64-29 64-64 64h-64c-35 0-64 29-64 64z' })
-				) : '',
-				state === 'loading' ? _react2.default.createElement(
-					'svg',
-					{ 'aria-hidden': 'true', focusable: 'false', 'data-prefix': 'fas', 'data-icon': 'spinner', role: 'img',
-						xmlns: 'http://www.w3.org/2000/svg', viewBox: '0 0 512 512',
-						className: 'svg-inline--fa fa-spinner fa-w-16 fa-spin fa-lg' },
-					_react2.default.createElement('path', { fill: 'currentColor',
-						d: 'M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z' })
-				) : '',
-				state === 'copied' ? _react2.default.createElement(
-					'svg',
-					{ 'aria-hidden': 'true', focusable: 'false', 'data-prefix': 'fas', 'data-icon': 'clipboard-check',
-						className: 'svg-inline--fa fa-clipboard-check fa-w-12', role: 'img',
-						xmlns: 'http://www.w3.org/2000/svg', viewBox: '0 0 384 512' },
-					_react2.default.createElement('path', { fill: 'currentColor',
-						d: 'M336 64h-80c0-35.3-28.7-64-64-64s-64 28.7-64 64H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM192 40c13.3 0 24 10.7 24 24s-10.7 24-24 24-24-10.7-24-24 10.7-24 24-24zm121.2 231.8l-143 141.8c-4.7 4.7-12.3 4.6-17-.1l-82.6-83.3c-4.7-4.7-4.6-12.3.1-17L99.1 285c4.7-4.7 12.3-4.6 17 .1l46 46.4 106-105.2c4.7-4.7 12.3-4.6 17 .1l28.2 28.4c4.7 4.8 4.6 12.3-.1 17z' })
-				) : ''
-			);
+			if (state === 'default') {
+				return _react2.default.createElement(_reactUiComponents.Icon, { icon: 'copy', size: '', fixedWidth: true, padded: 'right' });
+			} else if (state === 'loading') {
+				return _react2.default.createElement(_reactUiComponents.Icon, { icon: 'spinner', size: '', fixedWidth: true, padded: 'right', spin: true });
+			} else if (state === 'copied') {
+				return _react2.default.createElement(_reactUiComponents.Icon, { icon: 'clipboard-check', size: '', fixedWidth: true, padded: 'right' });
+			}
 		}, _temp), _possibleConstructorReturn(_this, _ret);
 	}
 
 	_createClass(AnchorView, [{
 		key: 'render',
 		value: function render() {
+			var i18nRegistry = this.props.i18nRegistry;
+
+
 			return this.getSectionId() && _react2.default.createElement(
 				'div',
-				{ style: {
-						display: 'flex',
-						justifyContent: 'space-between'
-					} },
+				{ className: _style2.default.flexAuto },
 				_react2.default.createElement(
 					_reactUiComponents.Button,
-					{ style: 'brand', onClick: this.copyNeosLinkToClipboard },
+					{
+						style: 'brand',
+						onClick: this.copyNeosLinkToClipboard,
+						title: i18nRegistry.translate('CodeQ.JumpMarkers:NodeTypes.Mixin.SectionConfiguration:properties.sectionId.copy-neos-link.tooltip')
+					},
+					this.getIcon(this.state.copyNeosLinkState),
 					_react2.default.createElement(_neosUiI18n2.default, {
-						id: 'CodeQ.JumpMarkers:NodeTypes.Mixin.SectionConfiguration:properties.sectionId.copy-neos-link',
-						fallback: 'Copy Neos link'
-					}),
-					this.getIcon(this.state.copyNeosLinkState)
+						id: 'CodeQ.JumpMarkers:NodeTypes.Mixin.SectionConfiguration:properties.sectionId.copy-neos-link.label'
+					})
 				),
 				_react2.default.createElement(
 					_reactUiComponents.Button,
-					{ style: 'brand', onClick: this.copyUriToClipboard },
+					{
+						style: 'brand',
+						onClick: this.copyUriToClipboard,
+						title: i18nRegistry.translate('CodeQ.JumpMarkers:NodeTypes.Mixin.SectionConfiguration:properties.sectionId.copy-uri.tooltip')
+					},
+					this.getIcon(this.state.copyUriState),
 					_react2.default.createElement(_neosUiI18n2.default, {
-						id: 'CodeQ.JumpMarkers:NodeTypes.Mixin.SectionConfiguration:properties.sectionId.copy-uri',
-						fallback: 'Copy link'
-					}),
-					this.getIcon(this.state.copyUriState)
+						id: 'CodeQ.JumpMarkers:NodeTypes.Mixin.SectionConfiguration:properties.sectionId.copy-uri.label'
+					})
 				)
 			);
 		}
@@ -4048,8 +4038,10 @@ var AnchorView = (_dec = (0, _reactRedux.connect)(function (state) {
 }(_react.Component), _class2.propTypes = {
 	focusedNode: _propTypes2.default.object,
 	documentNode: _propTypes2.default.object,
-	transientSectionId: _propTypes2.default.string
-}, _temp2)) || _class);
+	transientSectionId: _propTypes2.default.string,
+
+	i18nRegistry: _propTypes2.default.object.isRequired
+}, _temp2)) || _class) || _class);
 exports.default = AnchorView;
 
 /***/ }),
@@ -4266,7 +4258,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
-module.exports = {"syncButton":"style__syncButton___3cjXz"};
+module.exports = {"syncButton":"style__syncButton___3cjXz","flexAuto":"style__flexAuto___2D6Q-"};
 
 /***/ })
 

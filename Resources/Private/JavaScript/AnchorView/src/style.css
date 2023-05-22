@@ -1,3 +1,10 @@
 .syncButton {
     outline: none !important;
 }
+.flexAuto {
+	display: flex;
+	gap: 0px 8px;
+}
+.flexAuto > * {
+	flex: auto;
+}
