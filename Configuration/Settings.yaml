@@ -2,15 +2,15 @@ Neos:
   Flow:
     mvc:
       routes:
-        'CodeQ.JumpMarkers':
-          position: 'start'
+        CodeQ.JumpMarkers:
+          position: start
     security:
       authentication:
         providers:
           'Neos.Neos:Backend':
             requestPatterns:
               'CodeQ.JumpMarkers:Controllers':
-                pattern: 'ControllerObjectName'
+                pattern: ControllerObjectName
                 patternOptions:
                   controllerObjectNamePattern: 'CodeQ\JumpMarkers\Controller\.*'
   Neos:
@@ -29,7 +29,7 @@ Neos:
       resources:
         stylesheets:
           'CodeQ.JumpMarkers:AnchorView':
-            resource: resource://CodeQ.JumpMarkers/Public/JavaScript/AnchorView/Plugin.css
+            resource: 'resource://CodeQ.JumpMarkers/Public/JavaScript/AnchorView/Plugin.css'
         javascript:
           'CodeQ.JumpMarkers:AnchorView':
-            resource: resource://CodeQ.JumpMarkers/Public/JavaScript/AnchorView/Plugin.js
+            resource: 'resource://CodeQ.JumpMarkers/Public/JavaScript/AnchorView/Plugin.js'

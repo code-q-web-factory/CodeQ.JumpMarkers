@@ -4,16 +4,15 @@ up:
     -
       filters:
         -
-          type: 'NodeType'
+          type: NodeType
           settings:
             nodeType: 'CodeQ.JumpMarkers:Mixin.PageConfiguration'
             withSubTypes: true
       transformations:
         -
-          type: 'RenameProperty'
+          type: RenameProperty
           settings:
-            from: 'heroHashMenu'
-            to: 'showJumpMarkersMenu'
-
+            from: heroHashMenu
+            to: showJumpMarkersMenu
 down:
   comments: 'No down migration available'

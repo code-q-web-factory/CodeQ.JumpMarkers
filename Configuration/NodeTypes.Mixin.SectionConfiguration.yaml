@@ -12,7 +12,7 @@
           label: 'Anchor view'
           group: jumpmarker
           position: 300
-          view: 'CodeQ.JumpMarkers/Views/AnchorView'
+          view: CodeQ.JumpMarkers/Views/AnchorView
   properties:
     jumpMarkerTitle:
       type: string
@@ -33,17 +33,15 @@
         inspector:
           group: jumpmarker
           position: 200
-          editor: 'CodeQ.JumpMarkers/Inspector/Editors/SegmentIdEditor'
+          editor: CodeQ.JumpMarkers/Inspector/Editors/SegmentIdEditor
           editorOptions:
-            sectionId: "ClientEval:node.properties.jumpMarkerTitle"
-            # Implements the most common subset of CodeQ.JumpMarkers:Integration.Helper.NodeAnchorId,
-            # fully implementing Carbon.String.urlize(value) would bloat the code too much
-            placeholder: "ClientEval: (node.properties.jumpMarkerTitle || '').replace('&nbsp;', '-').replace(/<[^>]*>/g, ' ').substr(0, 100).trim().toLowerCase().replaceAll('ä', 'ae').replaceAll('ü', 'ue').replaceAll('ö', 'oe').replaceAll('ß', 'ss').replace(/[^A-Za-z0-9\/]+/g, '-').trim().replace(/^.*?([a-z].*)$/, /*remove non-alpha chars from start*/ '$1').replace(/(.*)-$/, /*remove dashes from end*/ '$1')"
+            sectionId: 'ClientEval:node.properties.jumpMarkerTitle'
+            placeholder: "ClientEval: (node.properties.jumpMarkerTitle || '').replace('&nbsp;', '-').replace(/<[^>]*>/g, ' ').substr(0, 100).trim().toLowerCase().replaceAll('ä', 'ae').replaceAll('ü', 'ue').replaceAll('ö', 'oe').replaceAll('ß', 'ss').replace(/[^A-Za-z0-9/]+/g, '-').trim().replace(/^.*?([a-z].*)$/, /*remove non-alpha chars from start*/ '$1').replace(/(.*)-$/, /*remove dashes from end*/ '$1')"
         help:
           message: i18n
       validation:
-        'Neos.Neos/Validation/StringLengthValidator':
+        Neos.Neos/Validation/StringLengthValidator:
           minimum: 1
           maximum: 255
-        'Neos.Neos/Validation/RegularExpressionValidator':
+        Neos.Neos/Validation/RegularExpressionValidator:
           regularExpression: '/^[a-z][a-z0-9\-]*$/i'

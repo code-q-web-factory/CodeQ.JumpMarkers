@@ -1,7 +1,3 @@
-##
-# This is a utility type, include it for a configuration
-# if a jump marker navigation should be shown on the page.
-##
 'CodeQ.JumpMarkers:Mixin.PageConfiguration':
   abstract: true
   properties:

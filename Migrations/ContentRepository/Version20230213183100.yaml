@@ -4,16 +4,15 @@ up:
     -
       filters:
         -
-          type: 'NodeType'
+          type: NodeType
           settings:
             nodeType: 'CodeQ.JumpMarkers:Mixin.SectionConfiguration'
             withSubTypes: true
       transformations:
         -
-          type: 'RenameProperty'
+          type: RenameProperty
           settings:
-            from: 'hashMenuTitle'
-            to: 'jumpMarkerTitle'
-
+            from: hashMenuTitle
+            to: jumpMarkerTitle
 down:
   comments: 'No down migration available'
