@@ -30,8 +30,13 @@ class ContentNodeUriAspect
      */
     public function rewriteContentNodeUris(JoinPointInterface $joinPoint)
     {
-        /** @var ActionRequest $request */
+        /** @var ActionRequest|null $request */
         $request = $joinPoint->getProxy()->getRequest();
+        // On the command line the UriBuilder has no request, so there is nothing to rewrite.
+        if ($request === null) {
+            return $joinPoint->getAdviceChain()->proceed($joinPoint);
+        }
+
         $arguments = $joinPoint->getMethodArguments();
 
         $contentNode = $arguments['controllerArguments']['node'] ?? null;
